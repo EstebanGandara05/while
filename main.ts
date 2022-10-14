@@ -3,7 +3,11 @@ input.onPinPressed(TouchPin.P0, function () {
 })
 let Jose = game.createSprite(0, 2)
 let andres = game.createSprite(randint(1, 4), randint(0, 4))
+let ximena: number = game.createSprite(randint(1, 4), randint(0, 4))
+let raul: number = game.createSprite(randint(1, 4), randint(0, 4))
 andres.set(LedSpriteProperty.Brightness, 100)
+raul.set(LedSpriteProperty.Brightness, 120)
+ximena.set(LedSpriteProperty.Brightness, 160)
 basic.forever(function () {
     while (input.buttonIsPressed(Button.A)) {
         Jose.change(LedSpriteProperty.X, -1)
@@ -29,4 +33,9 @@ basic.forever(function () {
             basic.clearScreen()
         }
     }
+})
+loops.everyInterval(3000, function () {
+    raul += 1
+    ximena += 1
+    Jose += 1
 })
